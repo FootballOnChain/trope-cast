@@ -2,7 +2,10 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Embed } from "@/components/embed";
 import siteMeta from "@/config/site.config";
 
-export const dynamic = 'force-dynamic'
+
+import Logo from "../public/photo.svg";
+
+export const dynamic = "force-dynamic";
 
 async function cronFeed(channel: string, pageSize: number) {
   try {
@@ -14,7 +17,7 @@ async function cronFeed(channel: string, pageSize: number) {
         headers: {
           Authorization: `Bearer ${process.env.PINATA_JWT}`,
         },
-      },
+      }
     );
     if (!result.ok) {
       throw new Error("failed to fetch data");
@@ -28,32 +31,54 @@ async function cronFeed(channel: string, pageSize: number) {
 }
 
 export async function Feed() {
-  const feed = await cronFeed(siteMeta.channelUrl, 50);
+  // const feed = await cronFeed(siteMeta.channelUrl, 50);
 
   return (
     <>
-      {feed.casts.map((cast: any) => (
-        <div
-          className="flex gap-4 sm:w-[500px] w-[350px] flex-row items-start"
-          key={cast.hash}
-        >
-          <Avatar>
-            <AvatarImage src={cast.author.pfp_url} />
-            <AvatarFallback>CN</AvatarFallback>
-          </Avatar>
-          <div className="flex flex-col items-start w-full">
-            <div className="flex gap-2">
-              <p className="font-bold">{cast.author.display_name}</p>
-              <p className="text-gray-600">@{cast.author.username}</p>
-            </div>
-            <p className="pb-2">{cast.text.replace(/https?:\/\/\S+/i, '')}</p>
-            {cast.embeds &&
-              cast.embeds.length > 0 ? (
-              <Embed embedObject={cast.embeds[0]} />
-            ) : null}
+      {/* {feed.casts.map((cast: any) => (  */}
+      <div
+        className="flex gap-4 sm:w-[500px] w-[350px] flex-row items-start"
+      >
+        <Avatar>
+          <AvatarImage src="../public/logo.svg" />
+          <AvatarFallback>CN</AvatarFallback>
+        </Avatar>
+        <div className="flex flex-col items-start w-full">
+          <div className="flex gap-2">
+            <p className="font-bold">{"Muhammad Amoo"}</p>
+            <p className="text-gray-600">@{"druxamb"}</p>
           </div>
+          <p className="pb-2">{"I and my team are working on the Farcaster Track for the Onchain Summer Buildathon"}</p>
         </div>
-      ))}
-      </>
+      </div>
+      {/* ))} */}
+    </>
   );
+}
+
+
+
+{
+  /* {feed.casts.map((cast: any) => ( 
+  <div
+    className="flex gap-4 sm:w-[500px] w-[350px] flex-row items-start"
+    key={cast.hash}
+  >
+    <Avatar>
+      <AvatarImage src={cast.author.pfp_url} />
+      <AvatarFallback>CN</AvatarFallback>
+    </Avatar>
+    <div className="flex flex-col items-start w-full">
+      <div className="flex gap-2">
+        <p className="font-bold">{cast.author.display_name}</p>
+        <p className="text-gray-600">@{cast.author.username}</p>
+      </div>
+      <p className="pb-2">{cast.text.replace(/https?:\/\/\S+/i, '')}</p>
+      {cast.embeds &&
+        cast.embeds.length > 0 ? (
+        <Embed embedObject={cast.embeds[0]} />
+      ) : null}
+    </div>
+  </div>
+))} */
 }
