@@ -22,7 +22,7 @@ export function Auth() {
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
           <Button className="sm:w-[500px] w-[300px] mt-4" variant="outline">
-            +
+            Create New Post
           </Button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px] max-w-[375px]">

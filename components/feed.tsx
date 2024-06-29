@@ -1,9 +1,11 @@
+// "use client";
+
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Embed } from "@/components/embed";
 import siteMeta from "@/config/site.config";
 
-
-import Logo from "../public/photo.svg";
+import { Heart } from "lucide-react";
+import { useState } from "react";
 
 export const dynamic = "force-dynamic";
 
@@ -31,28 +33,43 @@ async function cronFeed(channel: string, pageSize: number) {
 }
 
 export async function Feed() {
+  // const [like, setLike] = useState(false);
   // const feed = await cronFeed(siteMeta.channelUrl, 50);
 
+  // const handleLike = () => {
+  //   setLike(!like);
+  // }
+
   return (
-    <>
-      {/* {feed.casts.map((cast: any) => (  */}
-      <div
-        className="flex gap-4 sm:w-[500px] w-[350px] flex-row items-start"
-      >
-        <Avatar>
-          <AvatarImage src="../public/logo.svg" />
-          <AvatarFallback>CN</AvatarFallback>
-        </Avatar>
-        <div className="flex flex-col items-start w-full">
-          <div className="flex gap-2">
-            <p className="font-bold">{"Muhammad Amoo"}</p>
-            <p className="text-gray-600">@{"druxamb"}</p>
+    <div className=" border p-10">
+        {/* {feed.casts.map((cast: any) => (  */}
+      <div className="bg-background p-4 rounded-2xl">
+        <div
+          className="flex gap-4 sm:w-[500px] w-[350px] flex-row items-start"
+        >
+          <div className="flex flex-col items-start w-full gap-3">
+            <div className="flex gap-3 items-center">
+              <Avatar>
+                <AvatarImage src="../public/logo.svg" />
+                <AvatarFallback>TP</AvatarFallback>
+              </Avatar>
+                <div className="flex gap-2">
+                  <p className="font-bold">{"Muhammad Amoo"}</p>
+                  <p className="text-gray-600">@{"druxamb"}</p>
+                </div>
+            </div>
+            <p className="pb-2">{"I and my team are working on the Farcaster Track for the Onchain Summer Buildathon"}</p>
           </div>
-          <p className="pb-2">{"I and my team are working on the Farcaster Track for the Onchain Summer Buildathon"}</p>
+        </div>
+        <div className="engage">
+          {/* <button onClick={handleLike}> */}
+          <Heart />
+          {/* <Heart className={`${like ? "text-red-600" : ""}  `} /> */}
+          {/* </button> */}
         </div>
       </div>
-      {/* ))} */}
-    </>
+        {/* ))} */}
+    </div>
   );
 }
 
