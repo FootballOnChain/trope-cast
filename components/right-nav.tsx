@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export const RightNav = () => {
   return (
-    <div className=' bg-background h-screen border border-r-primary  p-4 flex flex-col gap-5'>
+    <div className='w-60 flex flex-col gap-5'>
       <h1 className=' text-xl font-bold'>Trope</h1>
       <div className="profile text-center grid gap-2">
         <div className='profile-pic border rounded-full bg-green-700 h-28 w-28 my-2 mx-auto'></div>

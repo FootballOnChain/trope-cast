@@ -1,9 +1,9 @@
 const siteMeta = {
-	title: "Diet Cast",
-	description: "The only client more lite than /diet-coke",
-  domain: "www.dietcast.xyz",
-  websiteUrl: "https://www.dietcast.xyz",
-  channelUrl: "diet-coke",
+	title: "Trope",
+	description: "Trope Onchain | A Place Were Football Meets Innovation",
+  domain: "www.trope-cast.vercel.app",
+  websiteUrl: "https://trope-cast.vercel.app",
+  channelUrl: "https://warpcast.com/~/channel/football",
   logo: "/logo.svg", 
   ogImage: "/og.png",
   favicon: "/favicon.png"
