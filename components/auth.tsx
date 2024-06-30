@@ -7,6 +7,7 @@ import "@farcaster/auth-kit/styles.css";
 import { AuthKitProvider } from "@farcaster/auth-kit";
 import { SignIn } from "@/components/sign-in";
 import siteMeta from "@/config/site.config";
+import { PlusIcon } from "lucide-react";
 
 const config = {
   rpcUrl: "https://mainnet.optimism.io",
@@ -21,7 +22,8 @@ export function Auth() {
     <AuthKitProvider config={config}>
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
-          <Button className="sm:w-[500px] w-[300px] mt-4" variant="outline">
+          <Button className="sm:w-[500px] w-[300px] mt-4 bg-green-700 font-semibold text-white hover:text-secondary">
+            <PlusIcon />
             Create New Post
           </Button>
         </DialogTrigger>

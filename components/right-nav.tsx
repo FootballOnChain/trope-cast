@@ -5,7 +5,7 @@ import Link from "next/link";
 export const RightNav = () => {
   return (
     <div className='w-60 flex flex-col gap-5'>
-      <h1 className=' text-xl font-bold'>Trope</h1>
+      <h1 className=' text-xl font-bold'>Trope Onchain</h1>
       <div className="profile text-center grid gap-2">
         <div className='profile-pic border rounded-full bg-green-700 h-28 w-28 my-2 mx-auto'></div>
         <p className='username font-semibold'>Muhammad Amoo</p>
@@ -26,45 +26,45 @@ export const RightNav = () => {
           </div>
         </div>
       </div>
-      <div className="nav grid gap-3">
+      <div className="nav">
         <Link href={"/"}>
-          <div className="group flex gap-2 cursor-pointer ">
+          <div className="group flex gap-2 cursor-pointer rounded-lg hover:bg-accent p-3 ">
             <HomeIcon className='group-hover:text-green-700 h-5' />
             <p className='group-hover:text-green-700 group-hover:font-semibold'>Home</p>
           </div>
         </Link>
         <Link href={"/"}>
-          <div className="group flex gap-2 cursor-pointer ">
+          <div className="group flex gap-2 cursor-pointer rounded-lg hover:bg-accent p-3 ">
             <TrendingUpIcon className='group-hover:text-green-700 h-5' />
             <p className='group-hover:text-green-700 group-hover:font-semibold'>Trending</p>
           </div>
         </Link>
         <Link href={"/"}>
-          <div className="group flex gap-2 cursor-pointer ">
+          <div className="group flex gap-2 cursor-pointer rounded-lg hover:bg-accent p-3 ">
             <Wallet className='group-hover:text-green-700 h-5' />
             <p className='group-hover:text-green-700 group-hover:font-semibold'>Wallet</p>
           </div>
         </Link>
         <Link href={"/"}>
-          <div className="group flex gap-2 cursor-pointer ">
+          <div className="group flex gap-2 cursor-pointer rounded-lg hover:bg-accent p-3 ">
             <AirplayIcon className='group-hover:text-green-700 h-5' />
             <p className='group-hover:text-green-700 group-hover:font-semibold'>Live Stream</p>
           </div>
         </Link>
         <Link href={"/"}>
-          <div className="group flex gap-2 cursor-pointer ">
+          <div className="group flex gap-2 cursor-pointer rounded-lg hover:bg-accent p-3 ">
             <AwardIcon className='group-hover:text-green-700 h-5' />
             <p className='group-hover:text-green-700 group-hover:font-semibold'>Fantasy Game</p>
           </div>
         </Link>
         <Link href={"/"}>
-          <div className="group flex gap-2 cursor-pointer ">
+          <div className="group flex gap-2 cursor-pointer rounded-lg hover:bg-accent p-3 ">
             <Users className='group-hover:text-green-700 h-5' />
             <p className='group-hover:text-green-700 group-hover:font-semibold'>Community</p>
           </div>
         </Link>
         <Link href={"/"}>
-          <div className="group flex gap-2 cursor-pointer ">
+          <div className="group flex gap-2 cursor-pointer rounded-lg hover:bg-accent p-3 ">
             <Clock10Icon className='group-hover:text-green-700 h-5' />
             <p className='group-hover:text-green-700 group-hover:font-semibold'>Live Score</p>
           </div>

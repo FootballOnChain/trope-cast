@@ -60,7 +60,7 @@ export default function RootLayout({
       <head />
       <body
         className={cn(
-          "dark min-h-screen bg-background font-sans antialiased",
+          "dar min-h-screen bg-background font-sans antialiased",
           fontSans.variable
         )}
       >
