@@ -23,8 +23,11 @@ export function FeedClient({ feed }: FeedClientProps) {
 
   return (
     <>
-      <div className="my-2 m-auto w-fit">
+      <div className="my-4 flex justify-between border border-transparent border-b-primary pb-4">
         <Auth />
+        <Button className="group bg-green-700 font-semibold text-white group-hover:text-secondary">
+          PTS: <span className="text-black ms-1 group-hover:text-white">500,00</span>
+        </Button>
       </div>
       <div className="flex justify-between">
         <h1 className="font-bold text-xl">Feed</h1>
@@ -38,7 +41,10 @@ export function FeedClient({ feed }: FeedClientProps) {
         </div>
       </div>
       {feed.casts.map((cast) => (
-        <div className="bg-background my-3 p-4 border rounded-2xl" key={cast.hash}>
+        <div
+          className="bg-background my-3 p-4 border rounded-2xl"
+          key={cast.hash}
+        >
           <div className="flex gap-4 sm:w-[500px] w-[350px] flex-row items-start">
             <div className="flex flex-col items-start w-full gap-3">
               <div className="flex gap-3 items-center">

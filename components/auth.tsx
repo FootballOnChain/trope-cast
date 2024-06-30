@@ -22,7 +22,7 @@ export function Auth() {
     <AuthKitProvider config={config}>
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
-          <Button className="sm:w-[500px] w-[300px] mt-4 bg-green-700 font-semibold text-white hover:text-secondary">
+          <Button className="bg-green-700 font-semibold text-white hover:text-secondary">
             <PlusIcon />
             Create New Post
           </Button>

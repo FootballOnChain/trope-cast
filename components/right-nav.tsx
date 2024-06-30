@@ -1,11 +1,27 @@
-import React from 'react';
-import { AirplayIcon, AwardIcon, Clock10Icon, HomeIcon, TrendingUpIcon, Users, Wallet} from 'lucide-react';
+"use client";
+
+import React, { useState } from 'react';
+import { AirplayIcon, AwardIcon, Clock10Icon, HomeIcon, MoonIcon, SunDimIcon, TrendingUpIcon, Users, Wallet} from 'lucide-react';
 import Link from "next/link";
+import { Button } from './ui/button';
 
 export const RightNav = () => {
+
+  const [mode, setMode] = useState(true);
+
+  const handleMode = () => {
+    setMode(!mode);
+  }
+
   return (
     <div className='w-60 flex flex-col gap-5'>
-      <h1 className=' text-xl font-bold'>Trope Onchain</h1>
+      <div className='flex justify-between'>
+      <h1 className='my-auto text-2xl font-bold'>Trope Cast</h1>
+      <Button onClick={handleMode} >
+        <SunDimIcon className={`${mode ? "block" : "hidden"}`} />
+        <MoonIcon className={`${mode ? "hidden" : 'block'}`} />
+      </Button>
+      </div>
       <div className="profile text-center grid gap-2">
         <div className='profile-pic border rounded-full bg-green-700 h-28 w-28 my-2 mx-auto'></div>
         <p className='username font-semibold'>Muhammad Amoo</p>
