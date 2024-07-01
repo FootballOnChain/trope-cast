@@ -35,7 +35,7 @@ async function cronFeed(channel: string, pageSize: number): Promise<Feed | null>
 }
 
 export default async function FeedServer() {
-  const feed = await cronFeed("football", 10);
+  const feed = await cronFeed("football", 50);
 
   if (!feed) {
     return <div>Failed to load feed</div>;

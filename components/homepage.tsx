@@ -5,7 +5,7 @@ import FeedServer from "./feed-server";
 
 export const HomePage = () => {
   return (
-    <main className="w-full">
+    <main className="w-full mt-20">
     <div className="fixed top-0 left-0 w-1/4 bg-background h-screen border border-r-primary p-4 flex flex-col items-end">
       <RightNav />
     </div>

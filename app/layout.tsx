@@ -3,6 +3,7 @@ import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import siteMeta from "@/config/site.config";
+import { ThemeProvider } from "next-themes";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -17,9 +18,7 @@ export const metadata: Metadata = {
     description: siteMeta.description,
     url: siteMeta.websiteUrl,
     siteName: siteMeta.title,
-    images: [
-      `${siteMeta.websiteUrl + siteMeta.ogImage}`,
-    ],
+    images: [`${siteMeta.websiteUrl + siteMeta.ogImage}`],
   },
   icons: {
     icon: siteMeta.favicon,
@@ -30,9 +29,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteMeta.title,
     description: siteMeta.description,
-    images: [
-      `${siteMeta.websiteUrl + siteMeta.ogImage}`,
-    ],
+    images: [`${siteMeta.websiteUrl + siteMeta.ogImage}`],
   },
   other: {
     "fc:frame": "vNext",
@@ -43,7 +40,8 @@ export const metadata: Metadata = {
     "fc:frame:button:1:target": "https://dietcast.xyz",
     "fc:frame:button:2": "Tutorial",
     "fc:frame:button:2:action": "link",
-    "fc:frame:button:2:target": "https://www.pinata.cloud/blog/how-to-build-a-lite-client-with-the-pinata-farcaster-api",
+    "fc:frame:button:2:target":
+      "https://www.pinata.cloud/blog/how-to-build-a-lite-client-with-the-pinata-farcaster-api",
     "fc:frame:button:3": "Repo",
     "fc:frame:button:3:action": "link",
     "fc:frame:button:3:target": "https://github.com/PinataCloud/diet-cast",
@@ -64,7 +62,14 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
