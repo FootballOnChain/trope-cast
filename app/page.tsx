@@ -14,7 +14,7 @@ export default async function Home() {
     <main className="flex min-h-screen flex-col items-center justify-start gap-12 dark:bg-[#161E29]">
       {/* <Image src={siteMeta.logo} alt="logo" className="" width={350} height={350} /> */}
       {/* <Auth /> */}
-      <NavBar />
+      {/* <NavBar /> */}
       <h1 className="text-center flex m-auto lg:hidden">
         Sorry :(, this page is currently not available on mobile devices, please
         switch to a desktop mode

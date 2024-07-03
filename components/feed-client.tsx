@@ -9,6 +9,7 @@ import { Heart } from "lucide-react";
 import { Feed } from "@/types"; // Adjust the import path based on where you define the types
 import { Auth } from "./auth";
 import { Button } from "./ui/button";
+import { NavBar } from "./nav-bar";
 
 interface FeedClientProps {
   feed: Feed;
@@ -23,7 +24,8 @@ export function FeedClient({ feed }: FeedClientProps) {
 
   return (
     <>
-      <div className="my-4 flex justify-between border border-transparent border-b-primary pb-4">
+    <NavBar />
+      <div className="my-4 flex justify-between border border-transparent border-b-primary p-4 sticky top-[65px] z-10 bg-[#ffffffe1] dark:bg-[#161E29]">
         <Auth />
         <Button className="group bg-green-700 font-semibold text-white group-hover:text-secondary">
           PTS: <span className="text-black ms-1 group-hover:text-white">500,00</span>
@@ -42,10 +44,10 @@ export function FeedClient({ feed }: FeedClientProps) {
       </div>
       {feed.casts.map((cast) => (
         <div
-          className="bg-background my-3 p-4 border rounded-2xl"
+          className="bg-background m-3 p-4 border rounded-2xl shadow-sm"
           key={cast.hash}
         >
-          <div className="flex gap-4 sm:w-[500px] w-[350px] flex-row items-start">
+          <div className="flex gap-4 flex-row items-start">
             <div className="flex flex-col items-start w-full gap-3">
               <div className="flex gap-3 items-center">
                 <Avatar>
@@ -60,6 +62,9 @@ export function FeedClient({ feed }: FeedClientProps) {
                 </div>
               </div>
               <p className="pb-2">{cast.text.replace(/https?:\/\/\S+/i, "")}</p>
+              {/* {cast.embeds && cast.embeds.length > 0 ? (
+              <Embed embedObject={cast.embeds[0]} />
+            ) : null} */}
             </div>
           </div>
           {/* <div className="engage">
