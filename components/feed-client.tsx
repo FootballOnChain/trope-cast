@@ -1,6 +1,3 @@
-// components/FeedClient.tsx
-
-"use client";
 
 import { useState } from "react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
@@ -16,11 +13,6 @@ interface FeedClientProps {
 }
 
 export function FeedClient({ feed }: FeedClientProps) {
-  const [like, setLike] = useState(false);
-
-  // const handleLike = () => {
-  //   setLike(!like);
-  // };
 
   return (
     <>
@@ -63,9 +55,9 @@ export function FeedClient({ feed }: FeedClientProps) {
                   </div>
                 </div>
                 <p className="pb-2">{cast.text.replace(/https?:\/\/\S+/i, "")}</p>
-                {/* {cast.embeds && cast.embeds.length > 0 ? (
+                {cast.embeds && cast.embeds.length > 0 ? (
                 <Embed embedObject={cast.embeds[0]} />
-              ) : null} */}
+              ) : null}
               </div>
             </div>
             {/* <div className="engage">

@@ -21,6 +21,16 @@ interface ChannelProps {
 
 export const RightNav = ({ feed }: ChannelProps) => {
   const { channel } = feed;
+
+  
+  const formatCount = (count: any) => {
+    if (count >=1000) {
+      return (count / 1000).toFixed(1) + 'K';
+    }
+
+    return count.toString();
+  }
+
   return (
     <div className="w-60 flex flex-col gap-5">
       <div className="flex justify-between">
@@ -34,24 +44,24 @@ export const RightNav = ({ feed }: ChannelProps) => {
     
         <p className="username text-xl font-semibold">{channel.name}</p>
         <p className="bio text-secondary-foreground">
-          {/* {channel.lead.profile.bio.text} */}
+          {channel.lead.profile.bio.text}
         </p>
         <hr />
         <div className="grid grid-cols-3 gap-2">
           <div>
-            <p className="font-semibold">{channel.follower_count}</p>
+            <p className="font-semibold"> {formatCount(channel.follower_count)}</p>
             <small className="text-secondary-foreground text-xs">
               Followers
             </small>
           </div>
           <div>
-            <p className="font-semibold">{channel.lead.follower_count}</p>
+            <p className="font-semibold">{formatCount(channel.lead.follower_count)}</p>
             <small className="text-secondary-foreground text-xs">
               Followers
             </small>
           </div>
           <div>
-            <p className="font-semibold">{channel.lead.following_count}</p>
+            <p className="font-semibold">{formatCount(channel.lead.following_count)}</p>
             <small className="text-secondary-foreground text-xs">
               Following
             </small>
