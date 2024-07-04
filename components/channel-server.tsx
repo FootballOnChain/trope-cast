@@ -1,8 +1,6 @@
-// components/FeedServer.tsx
 
-// import { FeedClient } from "@/components/feed-client";
 import siteMeta from "@/config/site.config";
-import { Feed, FeedChannel } from "@/types"; // Adjust the import path based on where you define the types
+import { FeedChannel } from "@/types"; // Adjust the import path based on where you define the types
 import { RightNav } from "./right-nav";
 
 async function cronChannel(channel: string): Promise<FeedChannel | null> {
@@ -35,13 +33,15 @@ async function cronChannel(channel: string): Promise<FeedChannel | null> {
   }
 }
 
-export default async function ChannelServer() {
-  const feed = await cronChannel("football");
+export default cronChannel;
+
+// export default async function ChannelServer() {
+//   const feed = await cronChannel("football");
   
 
-  if (!feed) {
-    return <div>Failed to load feed</div>;
-  }
+//   if (!feed) {
+//     return <div>Failed to load feed</div>;
+//   }
 
-  return <RightNav feed={feed} />;
-}
+//   return <RightNav feed={feed} />;
+// }

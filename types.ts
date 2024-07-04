@@ -19,7 +19,6 @@ export interface Author {
   
 
   // CHANNEL 
-  // @/types/index.ts
 
 export interface User {
   active_status: string;

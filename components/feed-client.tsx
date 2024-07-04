@@ -17,10 +17,10 @@ export function FeedClient({ feed }: FeedClientProps) {
   return (
     <>
     <NavBar />
-      <div className="my-4 flex justify-between border border-transparent border-b-primary p-4 sticky top-[65px] z-10 bg-[#ffffffe1] dark:bg-[#161E29]">
+      <div className="my-4 flex justify-between border border-transparent border-b-primary p-4 sticky top-[65px] z-10 bg-[#ffffffe1] dark:bg-[#161e29dd]">
         <Auth />
         <Button className="group bg-green-700 font-semibold text-white group-hover:text-secondary">
-          PTS: <span className="text-black ms-1 group-hover:text-white">500,00</span>
+          PTS: <span className="text-black ms-1 group-hover:text-secondary">500,00</span>
         </Button>
       </div>
       <div className="p-3">

@@ -93,7 +93,7 @@ export async function Embed({ embedObject }: { embedObject: EmbedObject }) {
     );
     const castData = await castReq.json();
     const cast = castData.cast;
-    console.log(cast);
+    // console.log(cast);
 
     return (
       <Link href={`https://warpcast.com/${cast.author.username}/${cast.hash}`} target="_blank">
